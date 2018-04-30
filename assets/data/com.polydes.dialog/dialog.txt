@@ -1,0 +1,204 @@
+#-Info-
+
+﻿//I should probably use the same format for all the others here. > names a dialog if it's the first character, # begins a comment.//
+//comments are inside two pairs of double-slashes//
+//use a hash (#) to begin a number or text label//
+//using special symbols in dialog://
+// \< = < //
+// \> = > //
+// \$ = $ //
+// \\ = \ //
+
+#Start
+
+Press V to advance/select. <but>Press C to instantly draw all text. <but>Press X to go ZOOM. <but>Press Z to go fast.<but>
+Press V to begin the game.<but>+First Day 2+
+
+#Scene 1
+
+Hi! This is the first day at your new job as a Software Engineer at one of the best tech companies. <but>
+I know you're busy, so I won't keep you. Good luck on your first day! <but>+Meet Manager 3+
+
+#Scene 2
+
+<playchan GoingToOffice 29><showname "Manager">"Hi! I'm your manager. <but><stopchan 29>Here is your office. We'll have a meeting shortly in Room 203."<but><hidename>+Meeting Room 4+
+
+#Scene 3
+
+<playchan AtTheMeeting 29><showname "Manager">"Oh, hi! This is our boss."<but><stopchan 29><clear><showname "Boss">"Oh, you're here to take notes. How about you bring us some coffee first?"<but><hidename><dg "Choice 1">
+
+#Choice 1
+
+How would do like to respond?
+<option [
+	["Tell them you are not an assistant" "Scene 4.0"]
+	["You bring the coffee " "Scene 5.0"]
+ ]>
+
+#Scene 4.0
+
++Boss Coffee 5+
+
+#Scene 4
+
+<showname "Boss">
+"There is really not much for you to do anyway, just bring us the coffee!"<but><hidename><dg "Choice 2">
+
+#Choice 2
+
+How would do like to respond?
+<option [
+	["You bring the coffee " "Scene 5.0"]
+ ]>
+
+#Scene 5.0
+
++Meeting 6+
+
+#Scene 5
+
+<playchan MakeCoffee 29>After you brought coffee, you sat through the meeting without having a chance to talk.<but><stopchan 29><clear>You return to your office.<playchan Resign 29><but><stopchan 29>+Feature 7+
+
+#Scene 6
+
+<showname "Manager">
+"Hey, implement this feature for me."<but><clear><hidename>You look at the request, but it does not seem right... <wait 0.4> The implementation would not fix the problem in the software and it would cost the company money.<but>
+<dg "Choice 3">
+
+#Choice 3
+
+How would do like to respond?
+<option [
+	["You raise the issue " "Scene 7"]
+	["You do what you're asked" "Scene 9.0"]
+ ]>
+
+#Scene 7
+
+<showname "Manager">
+"I don't think I asked your opinion."<but><hidename><dg "Choice 4">
+
+#Choice 4
+
+How would do like to respond?
+<option [
+	["You insist, bring up arguments " "Scene 8.0"]
+	["You do what you're asked" "Scene 9.0"]
+ ]>
+
+#Scene 8.0
+
++Angry Manager 8+
+
+#Scene 8
+
+<showname "Manager"><playchan Hmm 29>
+"Don't comment on my judgement, do it, because I said so!"<but><stopchan 29><hidename><dg "Choice 5">
+
+#Choice 5
+
+How would do like to respond?
+<option [
+	["You do what you're asked" "Scene 9.0"]
+ ]>
+
+#Scene 9.0
+
++Coworker 9+
+
+#Scene 9
+
+You implemented the feature the manager asked you to. <but>A co-worker comes to you.<playchan Knock 29><but><stopchan 29><clear><showname "Co-worker">"Hi! There is a problem with the feature you implemented, it is not efficient and does not solve our problem."<but><hidename><dg "Choice 6">
+
+#Choice 6
+
+How would do like to respond?
+<option [
+	["You agree, and explain the manager insisted ." "Scene 10"]
+	["You fix the issue." "Scene 12.0"]
+ ]>
+
+#Scene 10
+
+<showname "Co-worker">"What would the manager have to do with this? Don't blame others because you are incapable!"<but><hidename><dg "Choice 7">
+
+#Choice 7
+
+How would do like to respond?
+<option [
+	["Tell your boss your co-worker was innapropriate." "Scene 11.0"]
+	["You fix the issue" "Scene 12.0"]
+ ]>
+
+#Scene 11.0
+
++Boss Office 10+
+
+#Scene 11
+
+<showname "Boss">"Oh, dear, I don't think your colleague meant to do that. You were wrong, now get back to work and fix it."<but><hidename><dg "Choice 8">
+
+#Choice 8
+
+How would do like to respond?
+<option [
+	["You fix the issue" "Scene 12.0"]
+ ]>
+
+#Scene 12.0
+
++Office 11+
+
+#Scene 12
+
+You fixed the issue, but your manager calls you into their office.<but>+Resign 12+
+
+#Scene 13
+
+<showname "Manager">"Unfortunately, because your mistake caused us many problems, I would have to take you off the project."<but><hidename><dg "Choice 9">
+
+#Choice 9
+
+How would do like to respond?
+<option [
+	["Tell him he was the one who insisted to do this. " "Scene 14"]
+	["Send in your resignation."  "Scene 15"]
+ ]>
+
+#Scene 14
+
+<showname "Manager"><playchan Laugh 29>"Stop complaining so much! Now get back to work, and bring me some coffee, too."<but><stopchan 29><dg "Choice 10">
+
+#Choice 10
+
+How would do like to respond?
+<option [
+	["Send in your resignation " "Scene 15"]
+ ]>
+
+#Scene 15
+
++End 13+
+
+#Scene 15.1
+
+<playchan END 29>Only 26 percent of women with science, technology engineering, or math (STEM) college degrees work in STEM jobs (Wynn and Correll, 2018). <wait 0.4><clear>This means women turn away from STEM jobs before even getting started. <wait 0.4><clear>In tech companies, women are highly underrepresented and often feel unwelcome due to the lack of diversity and male-oriented culture<wait 0.2>.<wait 0.4>.<wait 0.4>. <wait 0.6><stopchan 29><dg "Choice 11">
+
+#Choice 11
+
+Would you like to start over?
+<option [
+	["Yes" "Restart"]
+	["No" "Bye"]
+ ]>
+
+#Bye
+
+Thank you for playing! <br><br>
+<wait 0.4>
+<typespeed 0.05><font "Textbox Small">Wynn, A. T. and Correll, S. J. (2018) Puncturing the pipeline: Do technology companies alienate women in recruiting sessions? Social Studies of Science. 48(1): 149-164.
+
+#Restart
+
++First Day 2+
+

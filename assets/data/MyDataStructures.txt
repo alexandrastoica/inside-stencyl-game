@@ -1,0 +1,12 @@
+Dialog/Default Style
+Dialog/Tweens/Fade Out
+Dialog/Tweens/Default
+Dialog/Tweens/Fade In
+Dialog/Windows/Dialog Name Window
+Dialog/Windows/Dialog Choice Window
+Dialog/Windows/Dialog Choice Cursor Window
+Dialog/Windows/Dialog Main Window
+Dialog/Scaling Images/Dialog Main
+Dialog/Scaling Images/Dialog Name
+Dialog/Scaling Images/Dialog Choice
+Dialog/Scaling Images/Dialog Choice Selection
